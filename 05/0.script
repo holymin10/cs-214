@@ -1,0 +1,9 @@
+Script started on 2023-02-06 19:10:33-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sc94@maroon14: ~/214/labs/05/extraCredit[01;32msc94@maroon14[00m:[01;34m~/214/labs/05/extraCredit[00m$ clos jure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (+ 1 2 3 4 5)user=> (+ 1 2 3 4 5)user=> [K(+ 1 2 3 4 5)
+15
+user=> [Kuser=> [Kuser=> exit    cld   
+[K]0;sc94@maroon14: ~/214/labs/05/extraCredit[01;32msc94@maroon14[00m:[01;34m~/214/labs/05/extraCredit[00m$ exit
+
+Script done on 2023-02-06 19:11:19-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,206 @@
+Script started on 2023-01-16 21:20:28-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sc94@maroon06: ~/214/labs/02[01;32msc94@maroon06[00m:[01;34m~/214/labs/02[00m$ cat example6.let x
+%{
+#include <stdio.h>
+#include <stdlib.h>           /* atoi() */
+#include <string.h>           /* strcmp() */
+#include "example6.tab.h"
+%}
+%%
+[0-9]+                  yylval = atoi(yytext); return NUMBER;
+heat                    return TOKHEAT;
+on|off                  yylval = !strcmp(yytext,"on"); return STATE;
+set                     return TOKSET;
+temperature             return TOKTEMPERATURE;
+humidity                return TOKHUMIDITY;
+
+to			/*modifier? */;
+\n                      /* ignore end of line */;
+[ \t]+                  /* ignore whitespace */;
+%%
+]0;sc94@maroon06: ~/214/labs/02[01;32msc94@maroon06[00m:[01;34m~/214/labs/02[00m$ le  f cat example6.y
+
+%{
+#include <stdio.h>
+#include <string.h>
+
+/* declarations */
+int yylex (void);
+void yyerror (char const *);
+int yyparse(void);
+
+/* definitions */ 
+void yyerror(const char *str) {
+        fprintf(stderr,"error: %s\n",str);
+}
+ 
+int yywrap() {
+        return 1;
+} 
+ 
+int main() {
+        yyparse();
+} 
+
+%}
+
+%token NUMBER TOKHEAT STATE TOKSET TOKTEMPERATURE TOKHUMIDITY
+%%
+
+commands: /* empty */
+        | commands command
+        ;
+
+command:
+        heat_switch
+        | temperature_set
+	| humidity_set
+        ;
+
+heat_switch:
+        TOKHEAT STATE
+        {
+                if ($2) {  /* if STATE == 1 */
+                        printf("\tHeat turned on\n");
+                } else {
+                        printf("\tHeat turned off\n");
+                }
+        }
+        ;
+temperature_set: 
+        TOKSET TOKTEMPERATURE NUMBER
+        {
+                printf("\tTemperature set to %d\n",$3);
+        }
+        ;
+
+humidity_set:
+	TOKSET TOKHUMIDITY NUMBER
+	{
+		printf("\tHumidity set to %d\n",$3);
+	}
+	;
+]0;sc94@maroon06: ~/214/labs/02[01;32msc94@maroon06[00m:[01;34m~/214/labs/02[00m$ cat example6.ylexls[Kcd  /home/cs/214/current/sc94ls[K[1@klscp project01-results /home/cs/214/current/sc94kls[K[1Plscd  /home/cs/214/current/sc94ls[Kcat example6.lex[2Py[Kflex example5 4.lex     6.lex
+]0;sc94@maroon06: ~/214/labs/02[01;32msc94@maroon06[00m:[01;34m~/214/labs/02[00m$ bison -d example6.y
+]0;sc94@maroon06: ~/214/labs/02[01;32msc94@maroon06[00m:[01;34m~/214/labs/02[00m$ gcc lex.yy.c example6.tab.c -o example6
+]0;sc94@maroon06: ~/214/labs/02[01;32msc94@maroon06[00m:[01;34m~/214/labs/02[00m$ ./emplaing       xample  6
+^[[A^[[B        set ter mperature 60
+	Temperature set to 60
+heat on
+	Heat turned on
+h set humidity to 5-0  0
+	Humidity set to 50
+heat off
+	Heat turned off
+e ^C
+]0;sc94@maroon06: ~/214/labs/02[01;32msc94@maroon06[00m:[01;34m~/214/labs/02[00m$ exit
+exit
+
+Script done on 2023-01-16 21:24:10-05:00 [COMMAND_EXIT_CODE="130"]
+Sungmin Choi 
+sc94
+Cs 214
+Jan 16, 2023
+
+Example1 Observation
+
+The code is setup so that when you type start after running the program, it beginbs the yy_rule_setup case 1 which makes the program print "Start command received\n");
+Then when you type stop, the program is set up so that it prints "Stop command received." It also stops the program. If the user inputs anything other than start and stop, 
+they just get their characters echoed back to them.
+
+Example2 Observation
+
+Whatever we input we get either word, number, or the underscore which is echoed. Whenever you input an underscore, the program echoes the amount of underscores the user inputed.
+
+Input: 2de 
+Output: NUMBER
+WORD
+Reason: Recognises number then the letters
+
+Input: r_3
+Output: WORD
+_NUMBER
+Reason: Recognises Word then echoes the underscores then recognises the number
+
+Input: eee__eee
+Output: WORD
+__WORD
+Reason: Recognises Word then echoes the underscores then recognises the word again
+
+Input: r3r3
+Output: WORD
+Reason: Recognises the whole thing as a word
+
+Input: !
+Output: !
+Reason: Just echoes the special charater
+
+Example3 Observation
+Output: 
+
+KEYWORD: class
+IDENTIFIER: StudentInfo
+PUNCTUATION: {
+KEYWORD: public
+PUNCTUATION: :
+IDENTIFIER: StudentInfo
+PUNCTUATION: (
+PUNCTUATION: )
+PUNCTUATION: {
+IDENTIFIER: myGPA
+OPERATOR: =
+DOUBLE: 0.0 (0)
+PUNCTUATION: ;
+IDENTIFIER: myHours
+OPERATOR: =
+INTEGER: 0 (0)
+PUNCTUATION: ;
+PUNCTUATION: }
+IDENTIFIER: StudentInfo
+PUNCTUATION: (
+KEYWORD: double
+IDENTIFIER: gpa
+PUNCTUATION: ,
+KEYWORD: int
+IDENTIFIER: hours
+PUNCTUATION: )
+PUNCTUATION: {
+IDENTIFIER: myGPA
+OPERATOR: =
+IDENTIFIER: gpa
+PUNCTUATION: ;
+IDENTIFIER: myHours
+OPERATOR: =
+IDENTIFIER: hours
+PUNCTUATION: ;
+PUNCTUATION: }
+KEYWORD: private
+PUNCTUATION: :
+KEYWORD: double
+IDENTIFIER: myGPA
+PUNCTUATION: ;
+KEYWORD: int
+IDENTIFIER: myHours
+PUNCTUATION: ;
+PUNCTUATION: }
+PUNCTUATION: ;
+
+
+Example4 Observation
+Terminals are symbols whose meaning is predefined
+Non terminals are symbols whose meanings must be defined. They are enclsed in angle-brackets.
+There is nothing strange other than the fact that the output is inprecise. There is no temperature shown on the output nor is it precise with showing whether the heat is turned on or off.
+
+Example5 Observation
+Input: set temperature 59
+Output:	Temperature set to 59
+Input: heat on
+Output:	Heat turned on
+It is now much more precise and knows what it is doing.
+
+Example6 Observation
+In script. Added set_humidity.
+
+
+
+

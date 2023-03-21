@@ -1,0 +1,11 @@
+Script started on 2023-02-06 19:47:08-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sc94@maroon14: ~/214/labs/05/extraCredit[01;32msc94@maroon14[00m:[01;34m~/214/labs/05/extraCredit[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 1 2 -3)[1Puser=> [K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 1 2 3)
+[K3
+user=> [Kuser=> [Kuser=> ((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 1 2 3)3[1P)5)user=> [K((fn [x y z] (max (Math/abs x) (Math/abs y) (Math/abs z))) 1 2 5)
+5
+user=> [Kuser=> [Kuser=> 
+[K]0;sc94@maroon14: ~/214/labs/05/extraCredit[01;32msc94@maroon14[00m:[01;34m~/214/labs/05/extraCredit[00m$ exit
+
+Script done on 2023-02-06 19:47:36-05:00 [COMMAND_EXIT_CODE="0"]

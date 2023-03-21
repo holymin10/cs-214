@@ -1,0 +1,46 @@
+Script started on 2023-02-06 20:41:57-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sc94@maroon14: ~/214/labs/05/extraCredit[01;32msc94@maroon14[00m:[01;34m~/214/labs/05/extraCredit[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=>    (reduce + [1 2 3][1 2 3])user=>    (reduce + [1 2 3])user=> [K[K   (reduce + '(1 2 3)(1 2 3)[K   (reduce + [1 2 3])
+[K   (reduce + '(1 2 3))[K[K   (reduce max [1 2 3][1 2 3][K   (reduce + '(1 2 3))
+[K   (reduce max [1 2 3])   (reduce max [1 2 3])[K[K   (reduce conj [1 2 3][1 2 3][K   (reduce max [1 2 3])
+[K   (reduce conj [1 2 3] [4 5 6][4 5 6])   (reduce conj [1 2 3] [4 5 6])[K6
+user=> 6
+user=> 3
+user=> [Kuser=>    (reduce conj [1 2 3] [4 5 6])user=> [K   (reduce conj [1 2 3] [4 5 6])
+[1 2 3 4 5 6]
+user=> [Kuser=> [Kuser=>  (reduce + [1 2 3 4 5][1 2 3 4 5])user=>  (reduce + [1 2 3 4 5])user=> [K[K   (reduce + 1 [2 3 4 5][2 3 4 5][K (reduce + [1 2 3 4 5])
+[K   (reduce + 1 [2 3 4 5])   (reduce + 1 [2 3 4 5])[K[K   (reduce + 1 '(2 3 4 5)(2 3 4 5)[K   (reduce + 1 [2 3 4 5])
+[K   (reduce + 1 '(2 3 4 5)[K15
+user=> [Kuser=>    (reduce + 1 '(2 3 4 5)user=> [K[Kuser=> 15
+[K   (reduce + 1 '(2 3 4 5)[Kuser=> [Kuser=>    (reduce + 1 '(2 3 4 5))user=> [K[K   (reduce max 5 [4 3 2 1][4 3 2 1][K   (reduce + 1 '(2 3 4 5))
+[K   (reduce max 5 [4 3 2 1][K15
+user=> [Kuser=>    (reduce max 5 [4 3 2 1])user=>    (reduce max 5 [4 3 2 1])user=> [K[K   (reduce bit-or [1 2 3 4][1 2 3 4][K   (reduce max 5 [4 3 2 1])
+[K   (reduce bit-or [1 2 3 4])   (reduce bit-or [1 2 3 4])[K[K   (reduce str ["a" "b" "c"]["a" "b" "c"][K   (reduce bit-or [1 2 3 4])
+[K   (reduce str ["a" "b" "c"])   (reduce str ["a" "b" "c"])[K5
+user=> 7
+user=> [Kuser=>    (reduce str ["a" "b" "c"])user=> [K   (reduce str ["a" "b" "c"])
+"abc"
+user=> [Kuser=> [Kuser=>  (reduce + 1 2 [3 4 5][3 4 5])user=>  (reduce + 1 2 [3 4 5])user=> [K[K   (reduce + 1 '(2 3 4)(2 3 4)[K (reduce + 1 2 [3 4 5])
+[K   (reduce + 1 '(2 3 4) 5)[KExecution error (ArityException) at user/eval21 (REPL:1).
+Wrong number of args (4) passed to: clojure.core/reduce
+[K   (reduce + 1 '(2 3 4) 5)[Kuser=> [Kuser=>    (reduce + 1 '(2 3 4) 5)user=> [K   (reduce + 1 '(2 3 4) 5)
+Execution error (ArityException) at user/eval23 (REPL:1).
+Wrong number of args (4) passed to: clojure.core/reduce
+user=> [Kuser=> [Kuser=>    (defn csv [seq][seq]user=> [K[K      (reduce (fn [a b][a b][K   (defn csv [seq]
+[K      (reduce (fn [a b] (str a "," b)(str a "," b))      (reduce (fn [a b] (str a "," b)) seq)      (reduce (fn [a b] (str a "," b)) seq)[K[K   )[K      (reduce (fn [a b] (str a "," b)) seq)
+[K   )[K   )
+[K#'user/csv
+user=> [Kuser=> [Kuser=> (csv [11 22 33][11 22 33])user=> (csv [11 22 33])user=> [K(csv [11 22 33])
+"11,22,33"
+user=> [Kuser=> [Kuser=>   (defn totalItems [seqOfSeqs][seqOfSeqs]user=> [K[K   (reduce + (map count seqOfSeqs)   (reduce + (map count seqOfSeqs)[K  (defn totalItems [seqOfSeqs]
+[K   (reduce + (map count seqOfSeqs))   (reduce + (map count seqOfSeqs))[K[K  )[K   (reduce + (map count seqOfSeqs))
+[K  )[K[K  )
+[K  (totalItems [["Ann"]["Ann"][K#'user/totalItems
+user=> 
+user=> [Kuser=>   (totalItems [["Ann"] ["Bob" "Chris"]["Bob" "Chris"] ["Dan" "Eve" "Fred"]["Dan" "Eve" "Fred"]]user=>   (totalItems [["Ann"] ["Bob" "Chris"] ["Dan" "Eve" "Fred"]])user=>   (totalItems [["Ann"] ["Bob" "Chris"] ["Dan" "Eve" "Fred"]])user=> [K  (totalItems [["Ann"] ["Bob" "Chris"] ["Dan" "Eve" "Fred"]])
+6
+user=> [Kuser=> [Kuser=> 
+[K]0;sc94@maroon14: ~/214/labs/05/extraCredit[01;32msc94@maroon14[00m:[01;34m~/214/labs/05/extraCredit[00m$ exit
+
+Script done on 2023-02-06 20:43:52-05:00 [COMMAND_EXIT_CODE="0"]

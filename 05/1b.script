@@ -1,0 +1,13 @@
+Script started on 2023-02-06 19:55:04-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sc94@maroon14: ~/214/labs/05/extraCredit[01;32msc94@maroon14[00m:[01;34m~/214/labs/05/extraCredit[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> ((fn [] 17.2))user=> ([2Pfn [] 17.2)[1@x] 17.2)user=> ([10@(fn [x] (nil? x)) nil)user=> ((fn [x[7@ y z] (+ x y z)) 1 3 5)user=> [K((fn [x y z] (+ x y z)) 1 3 5)
+[K9
+user=> [Kuser=> [Kuser=> ((fn [x y z] (+ x y z)) 1 3 5)user=> ((fn [[16P] 17.2))user=> ([2Pfn [] 17.2)[1@x] 17.2)user=> ([10@(fn [x] (nil? x)) nil)user=> [K((fn [x] (nil? x)) nil)
+true
+user=> [Kuser=> [Kuser=> ((fn [x] (nil? x)) nil)user=> ((fn [x[7@ y z] (+ x y z)) 1 3 5)user=> ((fn [[16P] 17.2))user=> [K((fn [] 17.2))
+17.2
+user=> [Kuser=> [Kuser=> 
+[K]0;sc94@maroon14: ~/214/labs/05/extraCredit[01;32msc94@maroon14[00m:[01;34m~/214/labs/05/extraCredit[00m$ exit
+
+Script done on 2023-02-06 19:55:27-05:00 [COMMAND_EXIT_CODE="0"]

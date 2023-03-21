@@ -1,0 +1,15 @@
+Script started on 2023-02-06 20:49:04-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;sc94@maroon14: ~/214/labs/05/extraCredit[01;32msc94@maroon14[00m:[01;34m~/214/labs/05/extraCredit[00m$ clojure
+[KClojure 1.10.1
+[Kuser=> [Kuser=> [Kuser=> (sumSquares [-1 -2 -3 0 1])[1P'(1 2 3 4 5)) ))[Kuser=> ([47@defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))user=> [K(defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))
+[K#'user/sumSquares
+user=> [Kuser=> [Kuser=> (defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))user=> ([41PsumSquares [-1 -2 -3 0 1])[1P'(1 2 3 4 5)) ))[Kuser=> ([47@defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))user=> (sumSquares '(1 2 3))[Kuser=> [K(sumSquares '(1 2 3))
+14
+user=> [Kuser=> [Kuser=> (sumSquares '(1 2 3))user=> ([47@defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))user=> ([41PsumSquares [-1 -2 -3 0 1])[1P'(1 2 3 4 5)) user=> [K(sumSquares '(1 2 3 4 5)) 
+55
+user=> [Kuser=> [Kuser=> (sumSquares '(1 2 3 4 5)) ))[Kuser=> ([47@defn sumSquares [seqOfSeqs] (reduce + (map * seqOfSeqs seqOfSeqs)))user=> ([41PsumSquares [-1 -2 -3 0 1])user=> [K(sumSquares [-1 -2 -3 0 1])
+15
+user=> [Kuser=> [Kuser=> 
+[K]0;sc94@maroon14: ~/214/labs/05/extraCredit[01;32msc94@maroon14[00m:[01;34m~/214/labs/05/extraCredit[00m$ exit
+
+Script done on 2023-02-06 20:50:07-05:00 [COMMAND_EXIT_CODE="0"]
